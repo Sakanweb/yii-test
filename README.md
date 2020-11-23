@@ -4,18 +4,21 @@ INSTALLATION
 ### Clone project from repository
 
 ~~~
-composer create-project --prefer-dist yiisoft/yii2-app-basic basic
+git clone https://github.com/Sakanweb/yii-test.git
 ~~~
 
-Now you should be able to access the application through the following URL, assuming `basic` is the directory
-directly under the Web root.
-
 ~~~
-http://localhost/basic/web/
+cd yii-test
 ~~~
 
-CONFIGURATION
--------------
+~~~
+composer install --optimize-autoloader --no-dev
+~~~
+
+~~~
+composer update
+~~~
+
 
 ### Database
 
@@ -24,9 +27,19 @@ Edit the file `config/db.php` with real data, for example:
 ```php
 return [
     'class' => 'yii\db\Connection',
-    'dsn' => 'mysql:host=localhost;dbname=yii2basic',
+    'dsn' => 'mysql:host=localhost;dbname=yii_db',
     'username' => 'root',
-    'password' => '1234',
+    'password' => '',
     'charset' => 'utf8',
 ];
+```
+### Migration
+~~~
+yii migrate --interactive=0
+~~~
+
+### Notice
+```
+    use this path for the domain connection
+    path/to/root/yii-test/web
 ```
