@@ -105,7 +105,7 @@ function importRequest(actionUrl, formData, fileIndex) {
             if (status == 'success') {
                 $('#fileList_' + fileIndex).find("td:eq(1)").html(STATUS_DONE);
                 responseCount++;
-                //doRedirect();
+                doRedirect();
             }
         },
         error: function (res) {
